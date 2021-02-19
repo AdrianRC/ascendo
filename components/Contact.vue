@@ -78,16 +78,6 @@
       .input-group {
         width: 100%;
 
-        input,
-        textarea {
-          width: 100%;
-          background: #75cdff;
-          border: none;
-          border-bottom: 1px solid #000000;
-          margin-top: 15px;
-          outline: none;
-        }
-
         label,
         input,
         textarea {
@@ -98,10 +88,22 @@
           color: #141212;
         }
 
+        input,
+        textarea {
+          width: 100%;
+          margin-top: 15px;
+          background: #75cdff;
+          outline: none;
+        }
+
+        input {
+          border: none;
+          border-bottom: 1px solid #000000;
+        }
+
         textarea {
           border: 1px solid #000000;
           resize: none;
-          width: 100%;
         }
 
         label {
