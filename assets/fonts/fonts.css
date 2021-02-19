@@ -1,0 +1,26 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Graphik';
+  src: local('Graphik Regular'), local('Graphik-Regular'),
+    url('~assets/fonts/Graphik-Regular.woff2') format('woff2'),
+    url('~assets/fonts/Graphik-Regular.woff') format('woff');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Graphik';
+  src: local('Graphik Medium'), local('Graphik-Medium'),
+    url('~assets/fonts/Graphik-Medium.otf') format('opentype');
+  font-style: normal;
+  font-weight: 500;
+}
+
+html,
+body {
+  font-family: 'Graphik';
+  font-style: normal;
+  font-weight: normal;
+  color: #141212;
+}
