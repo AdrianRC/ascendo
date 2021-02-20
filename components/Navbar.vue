@@ -18,8 +18,8 @@ nav.navbar {
 
   .logo {
     font-weight: 500;
-    font-size: vw(24);
-    line-height: vw(26);
+    font-size: vwS(16);
+    line-height: vwS(20);
     letter-spacing: 0.02em;
     text-transform: uppercase;
     text-decoration: none;
@@ -34,15 +34,31 @@ nav.navbar {
     }
 
     li a {
-      font-size: vw(22);
-      line-height: vw(26);
+      font-size: vwS(15);
+      line-height: vwS(20);
       letter-spacing: 0.02em;
       text-decoration: none;
       color: #141212;
     }
 
     li + li {
-      margin-left: vw(42);
+      margin-left: vwS(14);
+    }
+  }
+  @include above(small) {
+    .logo {
+      font-size: vw(24);
+      line-height: vw(26);
+    }
+    ul {
+      li a {
+        font-size: vw(22);
+        line-height: vw(26);
+      }
+
+      li + li {
+        margin-left: vw(42);
+      }
     }
   }
 }

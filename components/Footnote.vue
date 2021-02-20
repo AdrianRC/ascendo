@@ -54,20 +54,35 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: vw(32);
-  font-size: vw(24);
-  line-height: vw(26);
+  margin-top: vwS(12);
+  font-size: vwS(14);
+  line-height: vwS(14);
   letter-spacing: 0.02em;
   color: #141212;
 
   time {
     display: block;
-    padding-top: vw(8);
+    padding-top: vwS(8);
   }
 
   svg {
-    width: vw(36);
-    height: vw(36);
+    width: vwS(18);
+    height: vwS(18);
+  }
+
+  @include above(small) {
+    margin-top: vw(32);
+    font-size: vw(24);
+    line-height: vw(26);
+
+    time {
+      padding-top: vw(8);
+    }
+
+    svg {
+      width: vw(36);
+      height: vw(36);
+    }
   }
 }
 </style>
