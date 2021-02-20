@@ -26,8 +26,6 @@
       </form>
       <button>
         <svg
-          width="36"
-          height="36"
           viewBox="0 0 36 36"
           fill="none"
           aria-label="Submit"
@@ -121,6 +119,11 @@
       border: none;
       padding: vw(11) 0 0 vw(14);
       margin-left: vw(66);
+
+      svg {
+        width: vw(36);
+        height: vw(36);
+      }
     }
   }
 }

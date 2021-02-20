@@ -8,8 +8,7 @@
           <ul>
             <li class="footer-link">
               <svg
-                width="22"
-                height="22"
+                class="phone-svg"
                 viewBox="0 0 22 22"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -26,8 +25,7 @@
             </li>
             <li class="footer-link">
               <svg
-                width="20"
-                height="20"
+                class="whatsapp-svg"
                 viewBox="0 0 20 20"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -44,8 +42,7 @@
             </li>
             <li class="footer-link">
               <svg
-                width="22"
-                height="18"
+                class="email-svg"
                 viewBox="0 0 22 18"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -80,8 +77,7 @@
             </p>
             <a href="https://goo.gl/maps/CFgjvawdDor2wX9G6" class="maps"
               ><svg
-                width="20"
-                height="24"
+                class="map-svg"
                 viewBox="0 0 20 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -191,6 +187,26 @@ footer {
 
   .subsection + .subsection {
     margin-top: vw(40);
+  }
+
+  svg.phone-svg {
+    width: vw(22);
+    height: vw(22);
+  }
+
+  svg.whatsapp-svg {
+    width: vw(20);
+    height: vw(20);
+  }
+
+  svg.email-svg {
+    width: vw(22);
+    height: vw(18);
+  }
+
+  svg.map-svg {
+    width: vw(20);
+    height: vw(24);
   }
 }
 </style>

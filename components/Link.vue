@@ -3,8 +3,7 @@
     <a :href="href" class="link"
       ><span>{{ text }}</span
       ><svg
-        width="20"
-        height="20"
+        class="link-svg"
         viewBox="0 0 20 20"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -50,6 +49,8 @@ export default {
 
   svg {
     margin-left: vw(6);
+    width: vw(20);
+    height: vw(20);
   }
 }
 </style>
