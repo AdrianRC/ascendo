@@ -41,7 +41,8 @@
         <h3>Arquitectura y construcción</h3>
         <p>
           Servicios de arquitectura residencial, comercial, turística,
-          institucional, corporativa, industrial y turística. <br /><br />
+          institucional, corporativa, industrial y turística.
+          <br /><br />
           Especialidad en urbanismos y cabañas de montaña.
           <br /><br />
           Construcciones y remodelaciones en general.
@@ -80,15 +81,15 @@
   </section>
 </template>
 
-<style lang="postcss">
+<style lang="scss">
 .companies {
-  margin-top: 126px;
-  padding: 40px;
+  margin-top: vw(126);
+  padding: vw(40);
 
   h2 {
     font-weight: 500;
-    font-size: 24px;
-    line-height: 26px;
+    font-size: vw(24);
+    line-height: vw(26);
     letter-spacing: 0.02em;
     text-transform: uppercase;
     color: #141212;
@@ -105,37 +106,37 @@
     }
 
     .description {
-      max-width: 600px;
+      max-width: vw(600);
 
       h3 {
         font-weight: 500;
-        font-size: 64px;
-        line-height: 70px;
+        font-size: vw(64);
+        line-height: vw(70);
         letter-spacing: 0.02em;
       }
 
       p {
-        margin-top: 60px;
-        font-size: 24px;
-        line-height: 27px;
+        margin-top: vw(60);
+        font-size: vw(24);
+        line-height: vw(27);
         letter-spacing: 0.02em;
 
         .small {
-          font-size: 16px;
-          line-height: 18px;
+          font-size: vw(16);
+          line-height: vw(18);
         }
       }
 
       .links {
-        margin-top: 40px;
+        margin-top: vw(40);
 
         .link-wrapper + .link-wrapper {
-          margin-top: 15px;
+          margin-top: vw(15);
         }
       }
 
       .dual-links {
-        margin-top: 60px;
+        margin-top: vw(60);
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
@@ -143,18 +144,18 @@
         h4,
         h5 {
           font-weight: 500;
-          font-size: 24px;
-          line-height: 27px;
+          font-size: vw(24);
+          line-height: vw(27);
           letter-spacing: 0.02em;
           text-transform: uppercase;
         }
 
         .links {
-          margin-top: 25px;
+          margin-top: vw(25);
         }
 
         h5 {
-          margin-top: 30px;
+          margin-top: vw(30);
         }
       }
     }
@@ -166,7 +167,7 @@
 
       .description {
         order: 2;
-        padding-left: 135px;
+        padding-left: vw(135);
       }
     }
 
@@ -177,17 +178,17 @@
 
       .description {
         order: 1;
-        padding-right: 135px;
+        padding-right: vw(135);
       }
     }
   }
 
   .company:first-of-type {
-    margin-top: 50px;
+    margin-top: vw(50);
   }
 
   .company + .company {
-    margin-top: 150px;
+    margin-top: vw(150);
   }
 }
 </style>

@@ -1,0 +1,17 @@
+@import 'base/reset';
+@import 'fragments/show-above-small';
+@import 'fragments/show-below-small';
+@import 'fragments/animations';
+@import 'fragments/container';
+
+html {
+  background: $white;
+  color: $black;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}

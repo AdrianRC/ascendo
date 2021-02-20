@@ -72,7 +72,7 @@
       </div>
       <div class="section">
         <div class="subsection">
-          <h3>Direccion</h3>
+          <h3>Dirección</h3>
           <address class="details">
             <p>
               Amelica Francasci #12, Los Prados, Santo Domingo, República
@@ -116,44 +116,44 @@
   </footer>
 </template>
 
-<style lang="postcss">
+<style lang="scss">
 footer {
-  padding: 70px 40px 40px;
+  padding: vw(70) vw(40) vw(40);
   display: flex;
   justify-content: space-between;
 
   h2 {
     font-weight: 500;
-    font-size: 24px;
-    line-height: 26px;
+    font-size: vw(24);
+    line-height: vw(26);
     letter-spacing: 0.02em;
     text-transform: uppercase;
   }
 
   h3 {
     font-weight: 500;
-    font-size: 18px;
-    line-height: 20px;
+    font-size: vw(18);
+    line-height: vw(20);
     letter-spacing: 0.02em;
     text-transform: uppercase;
   }
 
   .information {
     display: flex;
-    padding-right: 40px;
+    padding-right: vw(40);
 
     .section + .section {
-      margin-left: 100px;
+      margin-left: vw(100);
     }
   }
 
   .details {
     font-style: normal;
-    font-size: 18px;
-    line-height: 24px;
+    font-size: vw(18);
+    line-height: vw(24);
     letter-spacing: 0.02em;
-    margin-top: 20px;
-    max-width: 300px;
+    margin-top: vw(20);
+    max-width: vw(300);
 
     ul {
       padding: 0;
@@ -163,8 +163,8 @@ footer {
       display: flex;
       align-items: center;
       list-style: none;
-      font-size: 18px;
-      line-height: 35px;
+      font-size: vw(18);
+      line-height: vw(35);
       letter-spacing: 0.02em;
       text-transform: uppercase;
     }
@@ -172,25 +172,25 @@ footer {
     .footer-link a {
       text-decoration: none;
       color: #141212;
-      margin-left: 15px;
+      margin-left: vw(15);
       text-transform: uppercase;
     }
 
     .maps {
-      margin-top: 20px;
+      margin-top: vw(20);
       display: flex;
       text-decoration: none;
       color: #141212;
       align-items: center;
 
       span {
-        margin-left: 10px;
+        margin-left: vw(10);
       }
     }
   }
 
   .subsection + .subsection {
-    margin-top: 40px;
+    margin-top: vw(40);
   }
 }
 </style>

@@ -53,18 +53,18 @@
   </section>
 </template>
 
-<style lang="postcss">
+<style lang="scss">
 .contact {
   display: flex;
   justify-content: space-between;
-  padding: 40px;
+  padding: vw(40);
   background: #75cdff;
 
   h2 {
     max-width: 50%;
-    font-size: 64px;
+    font-size: vw(64);
     font-weight: 500;
-    line-height: 70px;
+    line-height: vw(70);
     letter-spacing: 0.02em;
   }
 
@@ -74,7 +74,7 @@
     justify-content: flex-end;
 
     form {
-      width: 440px;
+      width: vw(440);
       .input-group {
         width: 100%;
 
@@ -82,8 +82,8 @@
         input,
         textarea {
           font-family: Graphik;
-          font-size: 18px;
-          line-height: 20px;
+          font-size: vw(18);
+          line-height: vs(20);
           letter-spacing: 0.02em;
           color: #141212;
         }
@@ -91,7 +91,7 @@
         input,
         textarea {
           width: 100%;
-          margin-top: 15px;
+          margin-top: vw(15);
           background: #75cdff;
           outline: none;
         }
@@ -112,15 +112,15 @@
       }
 
       .input-group + .input-group {
-        margin-top: 28px;
+        margin-top: vw(28);
       }
     }
 
     button {
       background: none;
       border: none;
-      padding: 11px 0 0 14px;
-      margin-left: 66px;
+      padding: vw(11) 0 0 vw(14);
+      margin-left: vw(66);
     }
   }
 }

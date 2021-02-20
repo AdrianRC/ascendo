@@ -1,0 +1,5 @@
+.show-below-small {
+  @include above(small) {
+    display: none !important;
+  }
+}

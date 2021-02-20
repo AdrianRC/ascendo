@@ -7,7 +7,7 @@
   </main>
 </template>
 
-<style lang="postcss">
+<style lang="scss">
 main {
   background-color: #fbfbfb;
 }

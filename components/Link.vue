@@ -33,7 +33,7 @@ export default {
 }
 </script>
 
-<style lang="postcss">
+<style lang="scss">
 .link {
   display: inline-flex;
   align-items: center;
@@ -41,15 +41,15 @@ export default {
   font-family: Graphik;
   font-style: normal;
   font-weight: normal;
-  font-size: 24px;
-  line-height: 27px;
+  font-size: vw(24);
+  line-height: vw(27);
   letter-spacing: 0.02em;
 
   color: #141212;
   border-bottom: 1px solid #141212;
 
   svg {
-    margin-left: 6px;
+    margin-left: vw(6);
   }
 }
 </style>

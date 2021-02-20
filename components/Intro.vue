@@ -4,28 +4,30 @@
     <h1>
       Empresa dedicada a ofrecer servicios de gestión de condominios turísticos
       y urbanos.
+      <!-- arquitectura y construcción, señalización en general -->
     </h1>
     <hr />
     <Footnote />
   </section>
 </template>
-
-<style lang="postcss">
+<style lang="scss">
 .intro {
-  padding: 40px;
+  padding: vw(40);
   background: linear-gradient(180deg, #f4fab5 0%, #75cdff 100%);
 
   h1 {
-    margin-top: 340px;
-    font-size: 64px;
-    line-height: 70px;
+    margin-top: vw(340);
+    font-size: vw(64);
+    line-height: vw(70);
+    font-weight: normal;
     letter-spacing: 0.02em;
     max-width: 75%;
   }
 
   hr {
-    border: 2px solid #141212;
-    margin-top: 50px;
+    border-top: vw(2) solid #141212;
+    border-bottom: none;
+    margin-top: vw(50);
   }
 }
 </style>

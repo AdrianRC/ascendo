@@ -10,15 +10,16 @@
   </nav>
 </template>
 
-<style lang="postcss">
+<style lang="scss">
 nav.navbar {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 
   .logo {
     font-weight: 500;
-    font-size: 24px;
-    line-height: 26px;
+    font-size: vw(24);
+    line-height: vw(26);
     letter-spacing: 0.02em;
     text-transform: uppercase;
     text-decoration: none;
@@ -33,15 +34,15 @@ nav.navbar {
     }
 
     li a {
-      font-size: 22px;
-      line-height: 24px;
+      font-size: vw(22);
+      line-height: vw(26);
       letter-spacing: 0.02em;
       text-decoration: none;
       color: #141212;
     }
 
     li + li {
-      margin-left: 42px;
+      margin-left: vw(42);
     }
   }
 }

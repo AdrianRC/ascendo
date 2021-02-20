@@ -4,13 +4,7 @@
       <p>Basada en la República Dominicana</p>
       <time :datetime="time">{{ time }}</time>
     </div>
-    <svg
-      width="36"
-      height="36"
-      viewBox="0 0 36 36"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M17.9166 1V34.8333"
         stroke="#141212"
@@ -55,20 +49,25 @@ export default {
 }
 </script>
 
-<style lang="postcss">
+<style lang="scss">
 .footnote {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 32px;
-  font-size: 24px;
-  line-height: 26px;
+  margin-top: vw(32);
+  font-size: vw(24);
+  line-height: vw(26);
   letter-spacing: 0.02em;
   color: #141212;
 
   time {
     display: block;
-    padding-top: 8px;
+    padding-top: vw(8);
+  }
+
+  svg {
+    width: vw(36);
+    height: vw(36);
   }
 }
 </style>
