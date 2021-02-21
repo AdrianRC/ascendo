@@ -12,8 +12,8 @@
           <input type="email" id="email" name="email" />
         </div>
         <div class="input-group">
-          <label for="phone">Telefono</label>
-          <input type="text" id="phone" name="phone" />
+          <label for="phone">Teléfono</label>
+          <input type="tel" id="phone" name="phone" />
         </div>
         <div class="input-group">
           <label for="subject">Asunto</label>
@@ -53,16 +53,13 @@
 
 <style lang="scss">
 .contact {
-  display: flex;
-  justify-content: space-between;
-  padding: vw(40);
+  padding: vwS(30) vwS(20) vwS(20);
   background: #75cdff;
 
   h2 {
-    max-width: 50%;
-    font-size: vw(64);
+    font-size: vwS(26);
+    line-height: vwS(30);
     font-weight: 500;
-    line-height: vw(70);
     letter-spacing: 0.02em;
   }
 
@@ -72,15 +69,15 @@
     justify-content: flex-end;
 
     form {
-      width: vw(440);
+      width: 100%;
+      margin-top: vwS(30);
       .input-group {
         width: 100%;
-
         label,
         input,
         textarea {
           font-family: Graphik;
-          font-size: vw(18);
+          font-size: vwS(18);
           line-height: vs(20);
           letter-spacing: 0.02em;
           color: #141212;
@@ -89,13 +86,14 @@
         input,
         textarea {
           width: 100%;
-          margin-top: vw(15);
+          margin-top: vwS(15);
           background: #75cdff;
           outline: none;
         }
 
         input {
           border: none;
+          border-radius: 0;
           border-bottom: 1px solid #000000;
         }
 
@@ -110,19 +108,65 @@
       }
 
       .input-group + .input-group {
-        margin-top: vw(28);
+        margin-top: vwS(28);
       }
     }
 
     button {
       background: none;
       border: none;
-      padding: vw(11) 0 0 vw(14);
-      margin-left: vw(66);
+      padding: vwS(11) 0 0 vwS(14);
+      margin-left: vwS(16);
 
       svg {
-        width: vw(36);
-        height: vw(36);
+        width: vwS(30);
+        height: vwS(30);
+      }
+    }
+  }
+
+  @include above(small) {
+    display: flex;
+    justify-content: space-between;
+    padding: vw(40);
+
+    h2 {
+      max-width: 50%;
+      font-size: vw(64);
+      line-height: vw(70);
+    }
+
+    .form-wrapper {
+      form {
+        width: vw(440);
+        margin-top: 0;
+        .input-group {
+          label,
+          input,
+          textarea {
+            font-size: vw(18);
+            line-height: vs(20);
+          }
+
+          input,
+          textarea {
+            margin-top: vw(15);
+          }
+        }
+
+        .input-group + .input-group {
+          margin-top: vw(28);
+        }
+      }
+
+      button {
+        padding: vw(11) 0 0 vw(14);
+        margin-left: vw(66);
+
+        svg {
+          width: vw(36);
+          height: vw(36);
+        }
       }
     }
   }
