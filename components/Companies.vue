@@ -204,9 +204,11 @@
 
     .company {
       grid-template-columns: 1fr 1fr;
+      align-items: center;
 
       img {
-        height: 100%;
+        min-height: 100%;
+        height: vw(650);
       }
 
       .description {
