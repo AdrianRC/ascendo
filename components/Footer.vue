@@ -114,42 +114,38 @@
 
 <style lang="scss">
 footer {
-  padding: vw(70) vw(40) vw(40);
-  display: flex;
-  justify-content: space-between;
+  padding: vwS(40) vwS(20);
 
   h2 {
     font-weight: 500;
-    font-size: vw(24);
-    line-height: vw(26);
+    font-size: vwS(20);
+    line-height: vwS(22);
     letter-spacing: 0.02em;
     text-transform: uppercase;
   }
 
   h3 {
     font-weight: 500;
-    font-size: vw(18);
-    line-height: vw(20);
+    font-size: vwS(16);
+    line-height: vwS(18);
     letter-spacing: 0.02em;
     text-transform: uppercase;
   }
 
   .information {
-    display: flex;
-    padding-right: vw(40);
-
+    margin-top: vwS(25);
     .section + .section {
-      margin-left: vw(100);
+      margin-top: vwS(25);
+      margin-left: 0;
     }
   }
 
   .details {
     font-style: normal;
-    font-size: vw(18);
-    line-height: vw(24);
+    font-size: vwS(16);
+    line-height: vwS(20);
     letter-spacing: 0.02em;
-    margin-top: vw(20);
-    max-width: vw(300);
+    margin-top: vwS(10);
 
     ul {
       padding: 0;
@@ -159,8 +155,8 @@ footer {
       display: flex;
       align-items: center;
       list-style: none;
-      font-size: vw(18);
-      line-height: vw(35);
+      font-size: vwS(16);
+      line-height: vwS(30);
       letter-spacing: 0.02em;
       text-transform: uppercase;
     }
@@ -168,45 +164,120 @@ footer {
     .footer-link a {
       text-decoration: none;
       color: #141212;
-      margin-left: vw(15);
+      margin-left: vwS(15);
       text-transform: uppercase;
     }
 
     .maps {
-      margin-top: vw(20);
+      margin-top: vwS(20);
       display: flex;
       text-decoration: none;
       color: #141212;
       align-items: center;
 
       span {
-        margin-left: vw(10);
+        margin-left: vwS(10);
       }
     }
   }
 
   .subsection + .subsection {
-    margin-top: vw(40);
+    margin-top: vwS(30);
   }
 
   svg.phone-svg {
-    width: vw(22);
-    height: vw(22);
+    width: vwS(18);
+    height: vwS(18);
   }
 
   svg.whatsapp-svg {
-    width: vw(20);
-    height: vw(20);
+    width: vwS(18);
+    height: vwS(18);
   }
 
   svg.email-svg {
-    width: vw(22);
-    height: vw(18);
+    width: vwS(20);
+    height: vwS(16);
   }
 
   svg.map-svg {
-    width: vw(20);
-    height: vw(24);
+    width: vwS(18);
+    height: vwS(20);
+  }
+
+  @include above(small) {
+    padding: vw(70) vw(40) vw(40);
+    display: flex;
+    justify-content: space-between;
+
+    h2 {
+      font-size: vw(24);
+      line-height: vw(26);
+    }
+
+    h3 {
+      font-size: vw(18);
+      line-height: vw(20);
+    }
+
+    .information {
+      display: flex;
+      margin-top: 0;
+      padding-right: vw(40);
+
+      .section + .section {
+        margin-top: 0;
+        margin-left: vw(100);
+      }
+    }
+
+    .details {
+      font-size: vw(18);
+      line-height: vw(24);
+      margin-top: vw(20);
+      max-width: vw(300);
+
+      .footer-link {
+        font-size: vw(18);
+        line-height: vw(35);
+      }
+
+      .footer-link a {
+        margin-left: vw(15);
+      }
+
+      .maps {
+        margin-top: vw(20);
+
+        span {
+          margin-left: vw(10);
+        }
+      }
+    }
+
+    .subsection + .subsection {
+      margin-top: vw(40);
+    }
+
+    svg.phone-svg {
+      width: vw(22);
+      height: vw(22);
+    }
+
+    svg.whatsapp-svg {
+      width: vw(20);
+      height: vw(20);
+    }
+
+    svg.email-svg {
+      width: vw(22);
+      height: vw(18);
+    }
+
+    svg.map-svg {
+      width: vw(20);
+      height: vw(24);
+    }
   }
 }
 </style>
