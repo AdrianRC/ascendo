@@ -116,7 +116,7 @@
       p {
         margin-top: vwS(15);
         font-size: vwS(18);
-        line-height: vwS(18);
+        line-height: vwS(22);
         letter-spacing: 0.02em;
 
         .small {
