@@ -40,17 +40,29 @@ export default {
   font-family: Graphik;
   font-style: normal;
   font-weight: normal;
-  font-size: vw(24);
-  line-height: vw(27);
+  font-size: vwS(16);
+  line-height: vwS(18);
   letter-spacing: 0.02em;
 
   color: #141212;
   border-bottom: 1px solid #141212;
 
   svg {
-    margin-left: vw(6);
-    width: vw(20);
-    height: vw(20);
+    margin-left: vwS(6);
+    width: vwS(20);
+    height: vwS(20);
+  }
+
+  @include above(small) {
+    font-size: vw(24);
+    line-height: vw(27);
+    border-bottom: 1px solid #141212;
+
+    svg {
+      margin-left: vw(6);
+      width: vw(20);
+      height: vw(20);
+    }
   }
 }
 </style>
