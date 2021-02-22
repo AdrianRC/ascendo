@@ -1,6 +1,6 @@
 <template>
   <nav class="navbar">
-    <nuxt-link to="#intro" class="logo"
+    <nuxt-link :to="{ path: '/', hash: '#intro' }" class="logo"
       ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 267.44 54.95">
         <defs>
           <style>
@@ -48,10 +48,22 @@
         /></svg
     ></nuxt-link>
     <ul>
-      <li><nuxt-link to="#integra">integra</nuxt-link></li>
-      <li><nuxt-link to="#fs" class="acronym">fs</nuxt-link></li>
-      <li><nuxt-link to="#sba" class="acronym">sba</nuxt-link></li>
-      <li><nuxt-link to="#contact">contacto</nuxt-link></li>
+      <li>
+        <nuxt-link :to="{ path: '/', hash: '#integra' }">integra</nuxt-link>
+      </li>
+      <li>
+        <nuxt-link :to="{ path: '/', hash: '#fs' }" class="acronym"
+          >fs</nuxt-link
+        >
+      </li>
+      <li>
+        <nuxt-link :to="{ path: '/', hash: '#sba' }" class="acronym"
+          >sba</nuxt-link
+        >
+      </li>
+      <li>
+        <nuxt-link :to="{ path: '/', hash: '#contact' }">contacto</nuxt-link>
+      </li>
     </ul>
   </nav>
 </template>
