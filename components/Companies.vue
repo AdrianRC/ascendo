@@ -40,8 +40,8 @@
       <div class="description">
         <h3>Arquitectura y construcción</h3>
         <p>
-          Servicios de arquitectura residencial, comercial, turística,
-          institucional, corporativa, industrial y turística.
+          Servicios de arquitectura residencial, comercial, institucional,
+          corporativa, industrial y turística.
           <br /><br />
           Especialidad en urbanismos y cabañas de montaña.
           <br /><br />
