@@ -1,7 +1,7 @@
 <template>
   <div class="footnote">
     <div class="text">
-      <p>Basada en la República Dominicana</p>
+      <p>{{ subtitle }}</p>
       <time :datetime="time">{{ time }}</time>
     </div>
     <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -25,6 +25,12 @@
 
 <script>
 export default {
+  props: {
+    subtitle: {
+      type: String,
+      required: true,
+    },
+  },
   data() {
     return {
       intervalId: null,

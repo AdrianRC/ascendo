@@ -1,6 +1,6 @@
 <template>
   <section class="contact" id="contact">
-    <h2>¿Interesado en alguna de nuestras compañias?</h2>
+    <h2>{{ title }}</h2>
     <div class="form-wrapper">
       <form>
         <div class="input-group">
@@ -50,6 +50,17 @@
     </div>
   </section>
 </template>
+
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      required: true,
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 .contact {

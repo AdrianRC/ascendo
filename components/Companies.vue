@@ -1,83 +1,85 @@
 <template>
   <section class="companies">
-    <h2>Nuestras compañías</h2>
-    <div class="company image-left" id="integra">
-      <img
-        src="~/assets/integra/panoramica.jpg"
-        alt="Imagen de condominios de Integra"
+    <h2>{{ title }}</h2>
+    <div
+      v-for="(company, index) in companies"
+      :key="company.id"
+      :id="company.tag"
+      class="company"
+      :class="index % 2 === 0 ? 'image-left' : 'image-right'"
+    >
+      <datocms-image
+        :data="company.image.responsiveImage"
+        class="company-image"
       />
       <div class="description">
-        <h3>Integra, Servicios Generales</h3>
-        <p>Gestión y administración de condominios turísticos inmobiliarios.</p>
-        <div class="links">
-          <Link text="Website" href="website" class="link-wrapper" />
-          <Link text="Instagram" href="Instagram" class="link-wrapper" />
-        </div>
-      </div>
-    </div>
-    <div class="company image-right" id="fs">
-      <img
-        src="~/assets/fast/cover.jpg"
-        alt="Imagen de condominios de Integra"
-      />
-      <div class="description">
-        <h3>FAST SIGNS<br />Santo Domingo</h3>
-        <p>
-          Franquicia #1 en USA de letreros, rótulos y señalética.<br />¡Ahora en
-          RD 🇩🇴!
-        </p>
-        <div class="links">
-          <Link text="Website" href="website" class="link-wrapper" />
-          <Link text="Instagram" href="Instagram" class="link-wrapper" />
-        </div>
-      </div>
-    </div>
-    <div class="company image-left" id="sba">
-      <img
-        src="~/assets/arquitectos/panoramica.jpg"
-        alt="Imagen de condominios de Integra"
-      />
-      <div class="description">
-        <h3>Arquitectura y construcción</h3>
-        <p>
-          Servicios de arquitectura residencial, comercial, institucional,
-          corporativa, industrial y turística.
-          <br /><br />
-          Especialidad en urbanismos y cabañas de montaña.
-          <br /><br />
-          Construcciones y remodelaciones en general.
-          <br /><br />
-          <span class="small"
-            >Pueden solicitar catálogo completo de obras.</span
-          >
-        </p>
-        <div class="dual-links">
+        <h3>{{ company.title }}</h3>
+        <div v-html="company.description" class="container" />
+        <div v-if="company.dualLinkGroup" class="dual-links">
           <div class="dual-link">
-            <h4>Construcción</h4>
-            <h5>Franco Borrel</h5>
-            <div class="links">
-              <Link text="Website" href="website" class="link-wrapper" />
-              <Link text="Instagram" href="Instagram" class="link-wrapper" />
-            </div>
+            <h4>{{ company.dualLinkGroup.title1 }}</h4>
+            <template v-for="group in company.dualLinkGroup.linkGroups1">
+              <h5 :key="group.id">{{ group.title }}</h5>
+              <div class="links" :key="group.id">
+                <Link
+                  v-for="link in group.links"
+                  :key="link.id"
+                  :text="link.text"
+                  :href="link.link"
+                  class="link-wrapper"
+                />
+              </div>
+            </template>
           </div>
           <div class="dual-link">
-            <h4>Arquitectura</h4>
-            <h5>SB Arquitectos</h5>
-            <div class="links">
-              <Link text="Website" href="website" class="link-wrapper" />
-              <Link text="Instagram" href="Instagram" class="link-wrapper" />
-            </div>
-            <h5>SB Arquitectos</h5>
-            <div class="links">
-              <Link text="Website" href="website" class="link-wrapper" />
-              <Link text="Instagram" href="Instagram" class="link-wrapper" />
-            </div>
+            <h4>{{ company.dualLinkGroup.title2 }}</h4>
+            <template v-for="group in company.dualLinkGroup.linkGroups2">
+              <h5 :key="group.id">{{ group.title }}</h5>
+              <div class="links" :key="group.id">
+                <Link
+                  :text="link.text"
+                  :href="link.link"
+                  class="link-wrapper"
+                  v-for="link in group.links"
+                  :key="link.id"
+                />
+              </div>
+            </template>
           </div>
+        </div>
+        <div class="links" v-else>
+          <Link
+            v-for="link in company.links"
+            :key="link.id"
+            :text="link.text"
+            :href="link.link"
+            class="link-wrapper"
+          />
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<script>
+import { Image } from 'vue-datocms'
+
+export default {
+  components: {
+    'datocms-image': Image,
+  },
+  props: {
+    companies: {
+      type: Array,
+      required: true,
+    },
+    title: {
+      type: String,
+      required: true,
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 .companies {
@@ -97,7 +99,7 @@
     display: grid;
     grid-template-columns: 100%;
 
-    img {
+    .company-image {
       width: 100%;
       object-fit: cover;
     }
@@ -113,16 +115,23 @@
         letter-spacing: 0.02em;
       }
 
-      p {
+      .container {
         margin-top: vwS(15);
+      }
+
+      p {
         font-size: vwS(18);
         line-height: vwS(22);
         letter-spacing: 0.02em;
 
-        .small {
-          font-size: vwS(12);
-          line-height: vwS(14);
+        small {
+          font-size: vwS(14);
+          line-height: vwS(16);
         }
+      }
+
+      p + p {
+        margin-top: vwS(15);
       }
 
       .links {
@@ -165,7 +174,7 @@
     }
 
     &.image-left {
-      img {
+      .company-image {
         order: 1;
       }
 
@@ -175,7 +184,7 @@
     }
 
     &.image-right {
-      img {
+      .company-image {
         order: 1;
       }
 
@@ -206,7 +215,7 @@
       grid-template-columns: 1fr 1fr;
       align-items: center;
 
-      img {
+      .company-image {
         min-height: 100%;
         height: vw(650);
       }
@@ -220,15 +229,22 @@
           line-height: vw(70);
         }
 
-        p {
+        .container {
           margin-top: vw(60);
+        }
+
+        p {
           font-size: vw(24);
           line-height: vw(27);
 
-          .small {
+          small {
             font-size: vw(16);
             line-height: vw(18);
           }
+        }
+
+        p + p {
+          margin-top: vw(20);
         }
 
         .links {
@@ -259,6 +275,7 @@
             margin-top: vw(30);
             font-size: vw(22);
             line-height: vw(24);
+            width: min-content;
           }
 
           .dual-link + .dual-link {
@@ -268,7 +285,7 @@
       }
 
       &.image-left {
-        img {
+        .company-image {
           order: 1;
         }
 
@@ -279,7 +296,7 @@
       }
 
       &.image-right {
-        img {
+        .company-image {
           order: 2;
         }
 

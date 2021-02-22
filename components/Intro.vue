@@ -1,15 +1,26 @@
 <template>
   <section class="intro" id="intro">
     <Navbar />
-    <h1>
-      Empresa dedicada a ofrecer servicios de gestión de condominios turísticos
-      y urbanos.
-      <!-- arquitectura y construcción, señalización en general -->
-    </h1>
+    <h1>{{ title }}</h1>
     <hr />
-    <Footnote />
+    <Footnote :subtitle="subtitle" />
   </section>
 </template>
+
+<script>
+export default {
+  props: {
+    title: {
+      type: String,
+      required: true,
+    },
+    subtitle: {
+      type: String,
+      required: true,
+    },
+  },
+}
+</script>
 <style lang="scss">
 .intro {
   padding: vwS(20);
