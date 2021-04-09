@@ -75,7 +75,11 @@
               Amelica Francasci #12, Los Prados, Santo Domingo, República
               Dominicana
             </p>
-            <a href="https://goo.gl/maps/CFgjvawdDor2wX9G6" class="maps"
+            <a
+              target="_blank"
+              rel="noreferrer noopener"
+              href="https://goo.gl/maps/CFgjvawdDor2wX9G6"
+              class="maps"
               ><svg
                 class="map-svg"
                 viewBox="0 0 20 24"
