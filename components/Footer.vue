@@ -103,9 +103,7 @@
         </div>
         <div class="subsection">
           <h3>Horario</h3>
-          <address class="details">
-            L-V: 8:30 a.m. – 5:30 p.m.<br />S: 8:30 a.m. – 12:00 p.m.
-          </address>
+          <address class="details">L-V: 8:30 a.m. – 5:30 p.m.</address>
         </div>
       </div>
     </div>
