@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a :href="href" class="link"
+    <a target="_blank" rel="noreferrer noopener" :href="href" class="link"
       ><span>{{ text }}</span
       ><svg
         class="link-svg"
