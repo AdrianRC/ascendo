@@ -1,71 +1,104 @@
 <template>
   <section class="contact" id="contact">
-    <h2>{{ title }}</h2>
-    <div class="form-wrapper">
-      <form id="form1" @submit.prevent="submit">
-        <div class="input-group">
-          <label for="name">Nombre Completo</label>
-          <input type="text" id="name" name="name" v-model="name" required />
+    <div class="slider">
+      <div class="slide content" :class="{ 'animate-out': isDone }">
+        <h2>{{ title }}</h2>
+        <div class="form-wrapper">
+          <form id="form1" @submit.prevent="submit">
+            <div class="input-group">
+              <label for="name">Nombre Completo</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                v-model="name"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="email">Correo</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                v-model="email"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="phone">Teléfono</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                v-model="phone"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="subject">Asunto</label>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                v-model="subject"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="text">Texto</label>
+              <textarea
+                type="text"
+                id="text"
+                rows="10"
+                name="text"
+                v-model="text"
+                required
+              />
+            </div>
+          </form>
+          <button
+            type="submit"
+            form="form1"
+            value="Submit"
+            :disabled="isDisabled"
+          >
+            <svg
+              viewBox="0 0 36 36"
+              fill="none"
+              aria-label="Submit"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M1 17.917L34.8333 17.917"
+                stroke="#141212"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M17.9167 1.00016L34.8334 17.9168L17.9167 34.8335"
+                stroke="#141212"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
         </div>
-        <div class="input-group">
-          <label for="email">Correo</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            v-model="email"
-            required
-          />
+      </div>
+      <div class="slide message" :class="{ 'animate-in': isDone }">
+        <div>
+          <template v-if="!isError">
+            <h3>Gracias por su mensaje.</h3>
+            <h4>Su solicitud fue enviada correctamente.</h4>
+          </template>
+          <template v-else>
+            <h3>Se ha producido un error.</h3>
+            <h4>Lamentamos los inconvenientes.</h4>
+          </template>
         </div>
-        <div class="input-group">
-          <label for="phone">Teléfono</label>
-          <input type="tel" id="phone" name="phone" v-model="phone" required />
-        </div>
-        <div class="input-group">
-          <label for="subject">Asunto</label>
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            v-model="subject"
-            required
-          />
-        </div>
-        <div class="input-group">
-          <label for="text">Texto</label>
-          <textarea
-            type="text"
-            id="text"
-            rows="10"
-            name="text"
-            v-model="text"
-            required
-          />
-        </div>
-      </form>
-      <button type="submit" form="form1" value="Submit" :disabled="isDisabled">
-        <svg
-          viewBox="0 0 36 36"
-          fill="none"
-          aria-label="Submit"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M1 17.917L34.8333 17.917"
-            stroke="#141212"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M17.9167 1.00016L34.8334 17.9168L17.9167 34.8335"
-            stroke="#141212"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
+      </div>
     </div>
   </section>
 </template>
@@ -86,6 +119,8 @@ export default {
       subject: '',
       text: '',
       isDisabled: false,
+      isDone: false,
+      isError: false,
     }
   },
   methods: {
@@ -105,7 +140,9 @@ export default {
         console.log(await response.text())
       } catch (e) {
         console.log(e)
+        this.isError = true
       }
+      this.isDone = true
     },
   },
 }
@@ -113,8 +150,52 @@ export default {
 
 <style lang="scss">
 .contact {
-  padding: vwS(30) vwS(20) vwS(20);
   background: #75cdff;
+
+  .slider {
+    position: relative;
+  }
+
+  .slide {
+    &.content {
+      padding: vwS(30) vwS(20) vwS(20);
+      transition: transform 0.5s ease;
+
+      &.animate-out {
+        transform: translate3d(-100%, 0, 0);
+      }
+    }
+
+    &.message {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 100;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      transform: translate3d(100%, 0, 0);
+      transition: transform 0.5s ease;
+
+      &.animate-in {
+        transform: translate3d(0, 0, 0);
+      }
+
+      h3 {
+        font-size: vwS(40);
+        font-weight: 500;
+        padding: 0 vwS(10);
+      }
+
+      h4 {
+        padding: vwS(10) vwS(10) 0;
+        font-size: vwS(20);
+        font-weight: 400;
+      }
+    }
+  }
 
   h2 {
     font-size: vwS(26);
@@ -186,9 +267,24 @@ export default {
   }
 
   @include above(small) {
-    display: flex;
-    justify-content: space-between;
-    padding: vw(40);
+    .slide {
+      &.content {
+        display: flex;
+        justify-content: space-between;
+        padding: vw(40);
+      }
+
+      &.message {
+        h3 {
+          font-size: vw(70);
+          padding: 0 vw(20);
+        }
+        h4 {
+          font-size: vw(30);
+          padding: vw(20) vw(20) 0;
+        }
+      }
+    }
 
     h2 {
       max-width: 50%;
