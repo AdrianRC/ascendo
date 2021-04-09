@@ -5,7 +5,7 @@ module.exports = (req, res) => {
   const { name, email, phone, subject, text } = JSON.parse(req.body)
   const msg = {
     to: 'adrn@hey.com',
-    from: 'adrian.rosario.codik@gmail.com',
+    from: 'u.borrell@ascendo.do',
     subject,
     html: `
       <div>${text}</div>
