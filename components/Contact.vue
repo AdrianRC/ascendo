@@ -154,6 +154,7 @@ export default {
 
   .slider {
     position: relative;
+    overflow: hidden;
   }
 
   .slide {
