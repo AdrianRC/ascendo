@@ -9,11 +9,17 @@
 
 <script>
 import { gql } from 'graphql-request'
+import { toHead } from 'vue-datocms'
 import client from '../utils/graphqlClient'
 
 const query = gql`
   {
     homepage {
+      seo: _seoMetaTags {
+        content
+        tag
+        attributes
+      }
       title
       subtitle
       companies {
@@ -75,6 +81,9 @@ export default {
   async asyncData() {
     const { homepage } = await client.request(query)
     return { ...homepage }
+  },
+  head() {
+    return toHead(this.seo)
   },
 }
 </script>
