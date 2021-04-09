@@ -184,9 +184,9 @@ export default {
       }
 
       h3 {
+        padding: 0 vwS(10);
         font-size: vwS(40);
         font-weight: 500;
-        padding: 0 vwS(10);
       }
 
       h4 {
