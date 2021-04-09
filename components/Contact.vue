@@ -2,29 +2,48 @@
   <section class="contact" id="contact">
     <h2>{{ title }}</h2>
     <div class="form-wrapper">
-      <form>
+      <form id="form1" @submit.prevent="submit">
         <div class="input-group">
           <label for="name">Nombre Completo</label>
-          <input type="text" id="name" name="name" />
+          <input type="text" id="name" name="name" v-model="name" required />
         </div>
         <div class="input-group">
           <label for="email">Correo</label>
-          <input type="email" id="email" name="email" />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            v-model="email"
+            required
+          />
         </div>
         <div class="input-group">
           <label for="phone">Teléfono</label>
-          <input type="tel" id="phone" name="phone" />
+          <input type="tel" id="phone" name="phone" v-model="phone" required />
         </div>
         <div class="input-group">
           <label for="subject">Asunto</label>
-          <input type="text" id="subject" name="subject" />
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            v-model="subject"
+            required
+          />
         </div>
         <div class="input-group">
           <label for="text">Texto</label>
-          <textarea type="text" id="text" rows="10" name="text" />
+          <textarea
+            type="text"
+            id="text"
+            rows="10"
+            name="text"
+            v-model="text"
+            required
+          />
         </div>
       </form>
-      <button>
+      <button type="submit" form="form1" value="Submit" :disabled="isDisabled">
         <svg
           viewBox="0 0 36 36"
           fill="none"
@@ -57,6 +76,36 @@ export default {
     title: {
       type: String,
       required: true,
+    },
+  },
+  data() {
+    return {
+      name: '',
+      email: '',
+      phone: '',
+      subject: '',
+      text: '',
+      isDisabled: false,
+    }
+  },
+  methods: {
+    async submit(e) {
+      this.isDisabled = true
+      try {
+        const response = await fetch('/api/email', {
+          method: 'POST',
+          body: JSON.stringify({
+            name: this.name,
+            email: this.email,
+            phone: this.phone,
+            subject: this.subject,
+            text: this.text,
+          }),
+        })
+        console.log(await response.text())
+      } catch (e) {
+        console.log(e)
+      }
     },
   },
 }
