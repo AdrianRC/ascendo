@@ -49,7 +49,7 @@
     ></nuxt-link>
     <ul>
       <li>
-        <nuxt-link :to="{ path: '/', hash: '#integra' }">integra</nuxt-link>
+        <nuxt-link :to="{ path: '/', hash: '#Adminio' }">Adminio</nuxt-link>
       </li>
       <li>
         <nuxt-link :to="{ path: '/', hash: '#fs' }" class="acronym"
