@@ -1,6 +1,6 @@
 <template>
   <section class="intro" id="intro">
-    <Navbar />
+    <Navbar :tags="tags" />
     <h1>{{ title }}</h1>
     <hr />
     <Footnote :subtitle="subtitle" />
@@ -16,6 +16,10 @@ export default {
     },
     subtitle: {
       type: String,
+      required: true,
+    },
+    tags: {
+      type: Array,
       required: true,
     },
   },

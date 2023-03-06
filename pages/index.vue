@@ -1,6 +1,6 @@
 <template>
   <main>
-    <Intro :title="title" :subtitle="subtitle" />
+    <Intro :title="title" :subtitle="subtitle" :tags="tags" />
     <Companies :companies="companies" :title="companiesTitle" />
     <Contact :title="contactTitle" />
     <Footer />
@@ -80,7 +80,11 @@ const query = gql`
 export default {
   async asyncData() {
     const { homepage } = await client.request(query)
-    return { ...homepage }
+    let tags = []
+    if (homepage.companies?.length) {
+      tags = homepage.companies.map((company) => company.tag)
+    }
+    return { ...homepage, tags }
   },
   head() {
     return toHead(this.seo)

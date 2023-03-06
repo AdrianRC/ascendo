@@ -48,17 +48,11 @@
         /></svg
     ></nuxt-link>
     <ul>
-      <li>
-        <nuxt-link :to="{ path: '/', hash: '#Adminio' }">Adminio</nuxt-link>
-      </li>
-      <li>
-        <nuxt-link :to="{ path: '/', hash: '#fs' }" class="acronym"
-          >fs</nuxt-link
-        >
-      </li>
-      <li>
-        <nuxt-link :to="{ path: '/', hash: '#sba' }" class="acronym"
-          >sba</nuxt-link
+      <li v-for="tag in tags" :key="tag">
+        <nuxt-link
+          :to="{ path: '/', hash: `#${tag}` }"
+          :class="{ acronym: tag.length < 4 }"
+          >{{ tag }}</nuxt-link
         >
       </li>
       <li>
@@ -67,6 +61,18 @@
     </ul>
   </nav>
 </template>
+
+<script>
+export default {
+  props: {
+    tags: {
+      type: Array,
+      default: () => [],
+    },
+  },
+}
+</script>
+
 
 <style lang="scss">
 nav.navbar {
